@@ -1,0 +1,69 @@
+## User Story:
+*AS* a coding bootcamp student
+*I WANT* TO create a browser homepage with an interface that has my 
+upcoming assignments and other information
+*SO THAT* I will contribute to the success of myself and others in courses taken on 
+Canvas/Instructure. 
+
+
+
+## Acceptance Criteria
+
+```
+GIVEN I am taking a course using Canvas/Instructure:
+
+*WHEN* I'm openning my browser
+*THEN* an application is housed as my homepage at a given URL hosted on Heroku
+(heroku deployment)
+
+*WHEN* I have upcoming assignments due, 
+*THEN* my earliest dated tasks appear at the top of a clickable list. 
+(GET POST req)
+
+*WHEN* data is stored or retrieved,
+*THEN* it comes from or is directed towards a MySQL server with clearly defined database
+types.
+(MySQL and Sequelize)
+
+*WHEN* on the page as a unique user, 
+*THEN* my page has the same structure with unique data due to the use of handlebars.js 
+as a semantic template engine.
+
+*WHEN* engaging with this application,
+*THEN* users will be given up to date and intended media due to the server and packages
+handled by Node.js and Express.js. 
+
+*WHEN* unveiling our package upon completion, 
+*THEN* there will be one library, package, or technology that is new to at least 
+85% of the classroom population. 
+
+*WHEN* openning our application's package contents, 
+*THEN* the structure will meet MVC Folder Paradigm standards for Structure and naming; 
+this will also include a professionally writted README.md
+
+*WHEN* on our site, 
+*THEN*	privacy and ?_? will be provided for users through the use of 
+authentication: express and cookies, as well as for ourselves through dotEnv and other
+saftey measures which protect sensitive information.
+
+*WHEN* a user enters the page, 
+*THEN* they have minimal "acclimation time" or confusion due to the 
+clear, clean, polished design. 
+(Polished UI)
+
+*WHEN* any button, clickable item, time-dependent or database-dependent objects are 
+engaged with,
+*THEN* they respond as expected for the given interraction type. 
+(responsive and interractive)
+
+*WHEN* good-quality coding standards are had, including:
+	file structure
+	naming conventions 
+	class/id naming best practices
+	indentation that contributes to readability
+	quality comments
+	etc...
+*THEN* others not only can, but will be more likely to, work on my application if made 
+into openSource or passed on to another person. 
+
+```
