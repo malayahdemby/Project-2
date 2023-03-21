@@ -1,0 +1,23 @@
+https://handlebarsjs.com/guide/
+
+https://nodejs.org/dist/latest-v18.x/docs/api/
+
+https://expressjs.com/en/guide/routing.html
+
+https://github.com/motdotla/dotenv#readme
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+	https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+	https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+	https://developer.mozilla.org/en-US/docs/Web/API/Keyboard_API
+	https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
+	https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API
+	https://developer.mozilla.org/en-US/docs/Web/API/Storage_API
+	https://developer.mozilla.org/en-US/docs/Web/API/Storage_Access_API
+	
+https://developer.mozilla.org/en-US/docs/Web/CSS
+https://developer.mozilla.org/en-US/docs/Web/HTML
+
+
+
