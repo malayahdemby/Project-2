@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS notedTodos_db;
+CREATE DATABASE notedTodos_db;
