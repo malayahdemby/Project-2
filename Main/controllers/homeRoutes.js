@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Note, Task, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    // Get all notes and JOIN with user data
+    const noteData = await Note.findAll({
       include: [
         {
           model: User,
@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const notes = noteData.map((note) => note.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      notes, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,9 +27,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    // Get all tasks and JOIN with user data
+    const taskData = await Task.findAll({
       include: [
         {
           model: User,
@@ -38,10 +39,56 @@ router.get('/project/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    // Serialize data so the template can read it
+    const tasks = taskData.map((task) => task.get({ plain: true }));
 
-    res.render('project', {
-      ...project,
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      tasks, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/note/:id', async (req, res) => {
+  try {
+    const noteData = await Note.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const note = noteData.get({ plain: true });
+
+    res.render('note', {
+      ...note,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/task/:id', async (req, res) => {
+  try {
+    const taskData = await Task.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const task = taskData.get({ plain: true });
+
+    res.render('task', {
+      ...task,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -55,7 +102,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Note }, { model: Task }],
     });
 
     const user = userData.get({ plain: true });
