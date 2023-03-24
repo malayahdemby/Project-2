@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS notedTodos_db;
-CREATE DATABASE notedTodos_db;
+DROP DATABASE IF EXISTS notedTasks_db;
+CREATE DATABASE notedTasks_db;
